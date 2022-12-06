@@ -129,7 +129,6 @@ int main()
 
 
 
-
 		//// draw ////
 		window.clear(Color::White);
 		// window.draw(background); // 배경이미지
