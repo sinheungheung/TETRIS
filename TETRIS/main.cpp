@@ -38,10 +38,10 @@ int main()
 {
 	srand(time(0));
 
-	RenderWindow window(VideoMode(320, 480), "The Game!");
+	RenderWindow window(VideoMode(320, 480), "TETRIS!");
 
 	Texture t;
-	t.loadFromFile(""); // 이미지 넣기
+	t.loadFromFile("images/tiles.png"); 
 
 	Sprite s(t);
 	s.setTextureRect(IntRect(0, 0, 18, 18));
@@ -131,7 +131,11 @@ int main()
 
 		//// draw ////
 		window.clear(Color::White);
-		// window.draw(background); // 배경이미지
+		Texture c;
+		c.loadFromFile("images/background.png");
+
+		Sprite v(c);
+	    window.draw(v); // 배경이미지
 
 		for (int i = 0; i < M; i++)
 			for (int j = 0; j < N; j++)
@@ -150,7 +154,8 @@ int main()
 			s.move(28, 31);
 			window.draw(s); // 이미지 그리기
 		}
-		//	window.draw(frame);
+		
+		
 		window.display();
 	}
 	return 0;
