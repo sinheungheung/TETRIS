@@ -1,5 +1,10 @@
 #include <SFML/Graphics.hpp>
 #include <time.h>
+#include <SFML/Audio.hpp>
+#include <Windows.h>
+#include <mmsystem.h>
+#pragma comment(lib,"winmm.lib")
+
 using namespace sf;
 
 const int M = 20;
@@ -7,9 +12,10 @@ const int N = 10;
 
 int field[M][N] = { 0 };
 
+
 struct Point
 {
-	int x, y;
+  int x, y;
 } a[4], b[4];
 
 int figures[7][4] =
@@ -32,10 +38,9 @@ bool check()
 	return 1;
 };
 
-
-
 int main()
 {
+	PlaySound(TEXT("jazz.wav"), NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
 	srand(time(0));
 
 	RenderWindow window(VideoMode(320, 480), "TETRIS!");
