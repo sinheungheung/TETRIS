@@ -1,9 +1,11 @@
 #include <SFML/Graphics.hpp>
 #include <time.h>
-#include <SFML/Audio.hpp>
+#include <SFML/Audio.hpp> 
 #include <Windows.h>
 #include <mmsystem.h>
 #pragma comment(lib,"winmm.lib")
+// API에서 음악을 출력하기 위해 PlaySound 함수를 사용함
+// 함수를 실행하기 위해 필요함
 
 using namespace sf;
 
@@ -42,6 +44,10 @@ bool check()
 int main()
 {
 	PlaySound(TEXT("jazz.wav"), NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
+	// SND_FILENAME: 만약 파일을 발견하지 못했을 경우에 SND_NODEFAULT 플래그가 설정되어 있지 않다면 기본 소리가 재생된다
+	// SND_ASYNC: 소리가 비동기로 연주되고 소리가 시작된 후 즉시 반환한다
+	// SND_LOOP: PlaySound를 다시 호출하기 전까지 무한으로 반복된다
+	
 	srand(time(0));
 
 	RenderWindow window(VideoMode(320, 480), "TETRIS!");
