@@ -37,6 +37,7 @@ bool check()
 
 	return 1;
 };
+	
 
 int main()
 {
@@ -94,6 +95,11 @@ int main()
 			}
 			if (!check()) for (int i = 0; i < 4; i++) a[i] = b[i];
 		}
+		// 블록이 프레임에 닿으면 게임 종료
+		else if (!check())
+		{
+			break;
+		}	
 
 		//// Tick ////
 		if (timer > delay)
@@ -159,8 +165,7 @@ int main()
 			s.move(28, 31);
 			window.draw(s); // 이미지 그리기
 		}
-		
-		
+
 		window.display();
 	}
 	return 0;
