@@ -145,7 +145,6 @@ int main()
 		dx = 0; rotate = 0; delay = 0.3;
 
 
-
 		//// draw ////
 		window.clear(Color::White);
 		Texture c;
