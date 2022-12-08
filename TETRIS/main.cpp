@@ -76,11 +76,11 @@ int main()
 				window.close();
 
 			if (e.type == Event::KeyPressed)
-				if (e.key.code == Keyboard::Up) rotate = true;
-				else if (e.key.code == Keyboard::Left) dx = -1;
-				else if (e.key.code == Keyboard::Right) dx = 1;
+				if (e.key.code == Keyboard::Up) rotate = true; // Up 키를 누르면 블록이 회전함
+				else if (e.key.code == Keyboard::Left) dx = -1; // Left 키를 누르면 블록이 왼쪽으로 이동함
+				else if (e.key.code == Keyboard::Right) dx = 1; // Right 키를 누르면 블록이 오른쪽으로 이동함
 		}
-		if (Keyboard::isKeyPressed(Keyboard::Down)) delay = 0.05;
+		if (Keyboard::isKeyPressed(Keyboard::Down)) delay = 0.05; // Down 키를 누르면 블록이 0.05씩 빨라짐
 
 		//// <- Move -> ////
 		for (int i = 0; i < 4; i++) {
@@ -118,7 +118,7 @@ int main()
 			{
 				for (int i = 0; i < 4; i++) field[b[i].y][b[i].x] = colorNum;
 
-				colorNum = 1 + rand() % 7;
+				colorNum = 1 + rand() % 7; // 0 에서 7 까지 랜덤
 				int n = rand() % 7;
 				for (int i = 0; i < 4; i++)
 				{
