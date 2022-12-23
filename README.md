@@ -17,3 +17,5 @@ Visual Studio/C++
 ---------------------
 ![시연영상](https://user-images.githubusercontent.com/80873447/206597381-8dcc10f1-d188-420e-93e5-ce15178498df.gif)
 </div>
+
+* 기능추가
